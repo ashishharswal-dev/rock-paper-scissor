@@ -1,9 +1,8 @@
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rock Paper Scissor</title>
+  <title>Document</title>
   <style>
     #div1 {
       display: flex;
@@ -21,8 +20,6 @@
       align-items:center;
       justify-content: center;
     }
-
-
     .button-ch {
       border-radius: 100%;
       height: 200px;
@@ -34,10 +31,8 @@
     .button-ch:hover{
       transform: scale(1.2);
     }
-
   </style>
 </head>
-
 <body style="background-color: black;">
   <div id="div1">
     <img onclick="play('paper')" class="button-ch" src="assets/paper.png" />
@@ -48,60 +43,53 @@
     <h2 id="choice">Your choice : </h1>
     <h2 id="computer-choice">Computer choose : </h1>
     <h2 id="result"></h1>
+    <h2 id="score">Wins : 0 Losses : 0 Ties : 0</h2>
   </div>
-
-
-
   <script>
-
-
+    let score = {
+      win : 0,
+      loss : 0,
+      tie : 0
+    }
     function play(ch) {
       const textArray = [
         'rock', 'paper', 'scissor'
       ];
       const randNumber = Math.floor(Math.random() * textArray.length);
       computerChoice = textArray[randNumber];
-      document.getElementById('choice').innerHTML = 'Your choice: ' + ch;
-      document.getElementById('computer-choice').innerHTML = 'Computer choose: ' + computerChoice;
-
+      document.getElementById('choice').innerHTML = 'Your choice : ' + ch;
+      document.getElementById('computer-choice').innerHTML = 'Computer choose : ' + computerChoice;
       if (ch === 'rock' && computerChoice === 'paper') {
         document.getElementById('result').innerHTML = 'you lose'
-        console.log('you lose');
+        score.loss += 1;
       } else if (ch === 'rock' && computerChoice === 'scissor') {
         document.getElementById('result').innerHTML = 'you win'
-        console.log('you win');
+        score.win += 1;
       } else if (ch === 'rock' && computerChoice === 'rock') {
         document.getElementById('result').innerHTML = 'Tie'
-
-        console.log('tie');
+        score.tie += 1;
       } else if (ch === 'paper' && computerChoice === 'paper') {
         document.getElementById('result').innerHTML = 'tie'
-
-        console.log('tie');
+        score.tie += 1;
       } else if (ch === 'paper' && computerChoice === 'rock') {
         document.getElementById('result').innerHTML = 'you win'
-
-        console.log('you win');
+        score.win += 1;
       } else if (ch === 'paper' && computerChoice === 'scissor') {
         document.getElementById('result').innerHTML = 'you lose'
-
-        console.log('you lose');
+        score.loss += 1;
       } else if (ch === 'scissor' && computerChoice === 'scissor') {
         document.getElementById('result').innerHTML = 'tie'
-
-        console.log('tie');
+        score.tie += 1;
       } else if (ch === 'scissor' && computerChoice === 'rock') {
         document.getElementById('result').innerHTML = 'you lose'
-
-        console.log('you lose');
+        score.loss += 1;
       } else if (ch === 'scissor' && computerChoice === 'paper') {
         document.getElementById('result').innerHTML = 'you win'
-
-        console.log('you win');
+        score.win += 1;
       }
+      document.getElementById('score').innerHTML = `Wins : ${score.win} Losses : ${score.loss} Ties : ${score.tie}`
     }
+   
   </script>
-
 </body>
-
 </html>
