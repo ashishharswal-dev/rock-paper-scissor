@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,18 +9,20 @@
       display: flex;
       margin-top: 150px;
       gap: 35px;
-      align-items:center;
+      align-items: center;
       justify-content: center;
     }
+
     #div2 {
       display: flex;
       flex-direction: column;
       margin-top: 40px;
-      color:white;
+      color: white;
       font-family: 'Courier New', Courier, monospace;
-      align-items:center;
+      align-items: center;
       justify-content: center;
     }
+
     .button-ch {
       border-radius: 100%;
       height: 200px;
@@ -28,28 +31,50 @@
       cursor: pointer;
       transition: transform 0.5s;
     }
-    .button-ch:hover{
+
+    .button-ch:hover {
       transform: scale(1.2);
+    }
+
+    @media only screen and (max-width: 600px) {
+      #div1 {
+        margin-top: 40px;
+       display: flex;
+       flex-direction: column;
+      }
+      #div2 {
+      color: white;
+      font-family: 'Courier New', Courier, monospace;
+      align-items: center;
+      justify-content: center;
+      padding : 30px;
+    }
+    .button-ch{
+      height: 180px;
+
+    }
     }
   </style>
 </head>
+
 <body style="background-color: black;">
   <div id="div1">
-    <img onclick="play('paper')" class="button-ch" src="assets/paper.png" />
-    <img onclick="play('rock')" class="button-ch" src="assets/rock.png" />
-    <img onclick="play('scissor')" class="button-ch" src="assets/scissor.png" />
+    <img onclick="play('paper')" class="button-ch" src="/assets/paper.png" />
+    <img onclick="play('rock')" class="button-ch" src="/assets/rock.png" />
+    <img onclick="play('scissor')" class="button-ch" src="/assets/scissor.png" />
   </div>
   <div id="div2">
     <h2 id="choice">Your choice : </h1>
-    <h2 id="computer-choice">Computer choose : </h1>
-    <h2 id="result"></h1>
-    <h2 id="score">Wins : 0 Losses : 0 Ties : 0</h2>
+      <h2 id="computer-choice">Computer choose : </h1>
+        <h2 id="result">
+          </h1>
+          <h2 id="score">Wins : 0 Losses : 0 Ties : 0</h2>
   </div>
   <script>
     let score = {
-      win : 0,
-      loss : 0,
-      tie : 0
+      win: 0,
+      loss: 0,
+      tie: 0
     }
     function play(ch) {
       const textArray = [
@@ -89,7 +114,8 @@
       }
       document.getElementById('score').innerHTML = `Wins : ${score.win} Losses : ${score.loss} Ties : ${score.tie}`
     }
-   
+
   </script>
 </body>
+
 </html>
