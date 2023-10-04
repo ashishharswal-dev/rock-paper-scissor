@@ -38,21 +38,26 @@
 
     @media only screen and (max-width: 600px) {
       #div1 {
-        margin-top: 40px;
-       display: flex;
-       flex-direction: column;
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
       }
-      #div2 {
-      color: white;
-      font-family: 'Courier New', Courier, monospace;
-      align-items: center;
-      justify-content: center;
-      padding : 30px;
-    }
-    .button-ch{
-      height: 180px;
 
-    }
+      #div2 {
+        margin-top: 0px;
+        color: white;
+        font-family: 'Courier New', Courier, monospace;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        font-size: 12px;
+        margin-bottom: 0px;
+        line-height: 4px;
+      }
+      .button-ch {
+        height: 120px;
+      }
     }
   </style>
 </head>
@@ -64,11 +69,11 @@
     <img onclick="play('scissor')" class="button-ch" src="assets/scissor.png" />
   </div>
   <div id="div2">
-    <h2 id="choice">Your choice : </h1>
-      <h2 id="computer-choice">Computer choose : </h1>
-        <h2 id="result">
-          </h1>
-          <h2 id="score">Wins : 0 Losses : 0 Ties : 0</h2>
+    <h2 id="choice">Your choice : </h2>
+    <h2 id="computer-choice">Computer choose : </h2>
+    <h2 id="result">
+    </h2>
+    <h2 id="score">Wins : 0 Losses : 0 Ties : 0</h2>
   </div>
   <script>
     let score = {
